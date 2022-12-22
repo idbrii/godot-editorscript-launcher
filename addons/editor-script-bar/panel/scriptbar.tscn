@@ -7,16 +7,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="VBox" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="HBox" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
 
-[node name="ButtonRoot" type="HBoxContainer" parent="VBox"]
+[node name="Reload" type="Button" parent="HBox"]
+margin_right = 107.0
+margin_bottom = 40.0
+text = "Refresh Scripts"
+
+[node name="VBox" type="VBoxContainer" parent="HBox"]
+margin_left = 111.0
+margin_right = 111.0
+margin_bottom = 40.0
+
+[node name="ButtonRoot" type="HBoxContainer" parent="HBox/VBox"]
 unique_name_in_owner = true
-margin_right = 1024.0
-margin_bottom = 20.0
 
-[node name="Button" type="Button" parent="VBox/ButtonRoot"]
-margin_right = 66.0
-margin_bottom = 20.0
-text = "Click Me"
+[connection signal="pressed" from="HBox/Reload" to="." method="_on_reload_pressed"]

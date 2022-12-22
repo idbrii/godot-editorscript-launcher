@@ -49,6 +49,10 @@ func load_from_path(path: String, ed: EditorInterface):
 
 
 func _ready():
+    _on_reload_pressed()
+
+
+func _on_reload_pressed():
     var script_path := "res://code/editor/"
     load_from_path(script_path, plugin.get_editor_interface())
 

@@ -2,6 +2,7 @@ extends Button
 
 var target # EditorScript
 var ed: EditorInterface
+var ui_root: Control
 
 
 func _ready():
@@ -12,7 +13,5 @@ func _ready():
 func _on_button_pressed():
     printt(name, "_on_button_pressed")
     var fn = target.new()
-    fn.run_script(ed)
-    #~ if target.has_method("get_mesh"):
-    #~     return target.get_mesh()
+    fn.run_script(ed, ui_root)
 

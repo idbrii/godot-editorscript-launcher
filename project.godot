@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "EditorScript",
+"class": "Launchable",
+"language": "GDScript",
+"path": "res://addons/editor-script-bar/launchable.gd"
+} ]
+_global_script_class_icons={
+"Launchable": ""
+}
+
 [application]
 
 config/name="editor-script-bar"

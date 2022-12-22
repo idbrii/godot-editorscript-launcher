@@ -1,11 +1,8 @@
 tool
-extends EditorScript
+extends Launchable
 
 
-func _run():
-    run_script(get_editor_interface())
-
-static func run_script(ed: EditorInterface):
+static func run_script(ed: EditorInterface, ui_root: Control):
     printt("/code/godot/addons/editor-script-bar/code/editor/rename_selected.gd")
     var sel := ed.get_selection()
     var i := 0

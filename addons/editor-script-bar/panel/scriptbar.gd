@@ -3,7 +3,7 @@ extends Control
 
 const FuncButton = preload("res://addons/editor-script-bar/panel/funcbutton.gd")
 
-var plugin: EditorPlugin
+var plugin #: EditorPlugin
 
 
 func get_files_in_dir(path: String) -> Array:
@@ -37,15 +37,19 @@ func load_from_path(path: String, ed: EditorInterface):
 
         var fullpath = path.plus_file(f)
 
+        var target = load(fullpath)
         var btn := FuncButton.new()
-        btn.target = load(fullpath)
+        btn.target = target
         assert(btn.target, "Failed to load script %s" % fullpath)
+
         btn.ed = ed
         #~ assert(btn.target.has_method("run_script"), "Scripts must have a run_script: %s" % fullpath)
         btn.text = f.get_basename()
         btn.set_size(Vector2(80,20))
         btn.show()
-        root.add_child(btn)
+        var widget = target.create_ui(btn)
+        btn.ui_root = widget
+        root.add_child(widget)
 
 
 func _ready():

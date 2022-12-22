@@ -26,6 +26,10 @@ func get_files_in_dir(path: String) -> Array:
 
 
 func load_from_path(path: String, ed: EditorInterface):
+    var root := $"%ButtonRoot"
+    for item in root.get_children():
+        item.queue_free()
+
     var files := get_files_in_dir(path)
     for f in files:
         if not f.ends_with(".gd"):
@@ -41,7 +45,7 @@ func load_from_path(path: String, ed: EditorInterface):
         btn.text = f.get_basename()
         btn.set_size(Vector2(80,20))
         btn.show()
-        $"%ButtonRoot".add_child(btn)
+        root.add_child(btn)
 
 
 func _ready():

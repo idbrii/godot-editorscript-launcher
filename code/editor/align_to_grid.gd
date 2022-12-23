@@ -28,6 +28,10 @@ static func run_script(ed: EditorInterface, ui_root: Control):
     var offset := ui_root.offset.get_value() as Vector3
 
     var selection := LaunchableScript.get_selection_or_children(ed)
+    if selection.empty():
+        push_error("No items selected.")
+        return
+
     var start = selection[0].global_translation
     var pos := Vector3.ZERO
     for item in selection:

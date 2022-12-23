@@ -17,8 +17,6 @@ class Data extends VBoxContainer:
 
 
 static func create_ui(run_btn: Button) -> Control:
-    printt("create_ui from align_to_grid.gd")
-
     var root := Data.new()
     root.name = "align_to_grid data"
     root.add_child(run_btn)

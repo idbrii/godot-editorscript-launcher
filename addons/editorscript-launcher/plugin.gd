@@ -13,6 +13,8 @@ func _enter_tree():
     bar.plugin = self
     bar.load_from_path(script_path, get_editor_interface())
     bar_btn = add_control_to_bottom_panel(bar, "Script Launcher")
+    # Need extra space to push above toolbar buttons. Bottom margin didn't work.
+    bar.rect_min_size.y = bar.rect_size.y + 50
 
 
 func _exit_tree():

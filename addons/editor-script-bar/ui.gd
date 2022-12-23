@@ -19,7 +19,6 @@ class CommonControl extends HBoxContainer:
         add_spacer(true)
         var label := add_empty_label()
         label.text = label_text
-        add_child(label)
         move_child(label, 0)
         return self
 

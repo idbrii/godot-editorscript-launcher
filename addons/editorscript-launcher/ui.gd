@@ -38,6 +38,21 @@ class CommonControl extends HBoxContainer:
 
 
 
+class Boolean extends CommonControl:
+    var val: CheckBox
+
+    func _ready():
+        val = CheckBox.new()
+        self.add_child(val)
+
+    static func create(label_text, parent):
+        var w := Boolean.new()
+        parent.add_child(w)
+        w.add_label(label_text)
+        return w
+
+
+
 class Float extends CommonControl:
     var val: SpinBox
 

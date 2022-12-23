@@ -15,8 +15,16 @@ class CommonControl extends HBoxContainer:
     func _ready():
         pass
 
-    func add_label(label_text: String):
+    func add_empty_label() -> Label:
         var label := Label.new()
+        add_child(label)
+        move_child(label, 0)
+        return label
+
+    func add_label(label_text: String):
+        var spacing := add_empty_label()
+        spacing.rect_min_size.x = 10
+        var label := add_empty_label()
         label.text = label_text
         add_child(label)
         move_child(label, 0)
@@ -40,7 +48,6 @@ class Float extends CommonControl:
     var val: SpinBox
 
     func _ready():
-        ._ready()
         val = SpinBox.new()
         self.add_child(val)
 
@@ -61,7 +68,6 @@ class Vec2 extends CommonControl:
     var y : SpinBox
 
     func _ready():
-        ._ready()
         x = _append_float(self, "X")
         y = _append_float(self, "Y")
 
@@ -76,7 +82,7 @@ class Vec3 extends Vec2:
     var z : SpinBox
 
     func _ready():
-        ._ready()
+        # parent._ready() is called automatically.
         z = _append_float(self, "Z")
 
     static func create(label_text, parent):

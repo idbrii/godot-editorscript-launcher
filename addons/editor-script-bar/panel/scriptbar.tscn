@@ -12,14 +12,31 @@ script = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Reload" type="Button" parent="HBox"]
-margin_right = 107.0
+[node name="VBoxLeft" type="VBoxContainer" parent="HBox"]
+margin_right = 60.0
 margin_bottom = 600.0
-text = "Refresh Scripts"
+
+[node name="Spacer1" type="Label" parent="HBox/VBoxLeft"]
+margin_right = 60.0
+margin_bottom = 14.0
+
+[node name="Reload" type="Button" parent="HBox/VBoxLeft"]
+margin_top = 18.0
+margin_right = 60.0
+margin_bottom = 38.0
+hint_tooltip = "Refresh the list of script buttons."
+text = "Refresh"
+
+[node name="Spacer2" type="Label" parent="HBox"]
+margin_left = 64.0
+margin_top = 293.0
+margin_right = 74.0
+margin_bottom = 307.0
+rect_min_size = Vector2( 10, 0 )
 
 [node name="ButtonRoot" type="HBoxContainer" parent="HBox"]
 unique_name_in_owner = true
-margin_left = 111.0
+margin_left = 78.0
 margin_right = 1020.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
@@ -30,4 +47,4 @@ margin_left = 1024.0
 margin_right = 1024.0
 margin_bottom = 600.0
 
-[connection signal="pressed" from="HBox/Reload" to="." method="_on_reload_pressed"]
+[connection signal="pressed" from="HBox/VBoxLeft/Reload" to="." method="_on_reload_pressed"]

@@ -1,24 +1,5 @@
 # Helper functions for creating widgets.
 
-static func _append_float(root: Control, label_text: String):
-    var label := Label.new()
-    label.text = label_text
-    root.add_child(label)
-    var spin := SpinBox.new()
-    root.add_child(spin)
-    return spin
-
-
-class NumberSpinner extends SpinBox:
-    func get_value():
-        var txt := get_line_edit().text
-        return float(txt)
-
-    func set_value(v):
-        get_line_edit().text = str(v)
-
-
-
 class CommonControl extends HBoxContainer:
 
     func _ready():
@@ -50,17 +31,21 @@ class CommonControl extends HBoxContainer:
         var label := Label.new()
         label.text = label_text
         root.add_child(label)
-        var spin := NumberSpinner.new()
+        var spin := SpinBox.new()
+        spin.step = -1
+        spin.rounded = false
         root.add_child(spin)
         return spin
 
 
 
 class Float extends CommonControl:
-    var val: NumberSpinner
+    var val: SpinBox
 
     func _ready():
-        val = NumberSpinner.new()
+        val = SpinBox.new()
+        val.step = -1
+        val.rounded = false
         self.add_child(val)
 
     static func create(label_text, parent):
@@ -72,15 +57,16 @@ class Float extends CommonControl:
 
 
 class Vec2 extends CommonControl:
-    var x : NumberSpinner
-    var y : NumberSpinner
+    var x : SpinBox
+    var y : SpinBox
 
     func _ready():
         x = _append_float(self, "X")
         y = _append_float(self, "Y")
 
     func get_value():
-        return Vector2(x.get_value(),
+        return Vector2(
+            x.get_value(),
             y.get_value())
 
     func set_value(v):
@@ -95,14 +81,15 @@ class Vec2 extends CommonControl:
 
 
 class Vec3 extends Vec2:
-    var z : NumberSpinner
+    var z : SpinBox
 
     func _ready():
         # parent._ready() is called automatically.
         z = _append_float(self, "Z")
 
     func get_value():
-        return Vector3(x.get_value(),
+        return Vector3(
+            x.get_value(),
             y.get_value(),
             z.get_value())
 

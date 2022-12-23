@@ -12,7 +12,7 @@ class Data extends VBoxContainer:
         offset = ui.Vec3.create("Offset", self)
         offset.set_value(Vector3(1, 0, 1))
         max_width = ui.Float.create("Max Width", self)
-        max_width.val.set_value(50)
+        max_width.val.value = 50
         rect_min_size.x = 200
 
 
@@ -26,7 +26,7 @@ static func create_ui(run_btn: Button) -> Control:
 
 
 static func run_script(ed: EditorInterface, ui_root: Control):
-    var max_width = ui_root.max_width.val.get_value()
+    var max_width = ui_root.max_width.val.value
     var offset := ui_root.offset.get_value() as Vector3
 
     var selection := ed.get_selection().get_selected_nodes()

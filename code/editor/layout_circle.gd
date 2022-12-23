@@ -1,7 +1,7 @@
 tool
 extends LaunchableScript
 
-const ui = preload("res://addons/editor-script-bar/ui.gd")
+const ui = preload("res://addons/editorscript-launcher/ui.gd")
 
 
 class Data extends VBoxContainer:

@@ -1,7 +1,7 @@
 tool
 extends EditorPlugin
 
-const bar_scene = preload("res://addons/editor-script-bar/panel/scriptbar.tscn")
+const bar_scene = preload("res://addons/editorscript-launcher/panel/launchpad.tscn")
 var script_path := "res://code/editor/"
 
 var bar
@@ -12,7 +12,7 @@ func _enter_tree():
     bar = bar_scene.instance()
     bar.plugin = self
     bar.load_from_path(script_path, get_editor_interface())
-    bar_btn = add_control_to_bottom_panel(bar, "Script Bar")
+    bar_btn = add_control_to_bottom_panel(bar, "Script Launcher")
 
 
 func _exit_tree():

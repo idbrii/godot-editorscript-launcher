@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "EditorScript",
 "class": "LaunchableScript",
 "language": "GDScript",
-"path": "res://addons/editor-script-bar/launchablescript.gd"
+"path": "res://addons/editorscript-launcher/launchablescript.gd"
 } ]
 _global_script_class_icons={
 "LaunchableScript": ""
@@ -20,12 +20,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="editor-script-bar"
+config/name="editorscript-launcher"
 config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/editor-script-bar/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/editorscript-launcher/plugin.cfg" )
 
 [global]
 

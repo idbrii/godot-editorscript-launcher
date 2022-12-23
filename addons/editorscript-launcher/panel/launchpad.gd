@@ -1,7 +1,7 @@
 tool
 extends Control
 
-const FuncButton = preload("res://addons/editor-script-bar/panel/funcbutton.gd")
+const FuncButton = preload("res://addons/editorscript-launcher/panel/funcbutton.gd")
 
 var plugin #: EditorPlugin
 

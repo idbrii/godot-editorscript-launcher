@@ -31,7 +31,7 @@ class CommonControl extends HBoxContainer:
         label.text = label_text
         root.add_child(label)
         var spin := SpinBox.new()
-        spin.step = -1
+        spin.step = 0.01
         spin.rounded = false
         root.add_child(spin)
         return spin
@@ -58,7 +58,7 @@ class Float extends CommonControl:
 
     func _ready():
         val = SpinBox.new()
-        val.step = -1
+        val.step = 0.01
         val.rounded = false
         self.add_child(val)
 

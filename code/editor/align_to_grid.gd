@@ -3,25 +3,15 @@ extends Launchable
 
 const ui = preload("res://addons/editor-script-bar/ui.gd")
 
-#~ class Inputs extends Control:
-#~     var offset
-#~     var max_width
-#~     func _ready():
-#~         offset = ui.vec3("Offset")
-#~         root.add_child()
-#~         root.add_child(ui.float("Max Width"))
-#~         root.add_child(run_btn)
 
-
-class Data extends Control:
+class Data extends VBoxContainer:
     var offset #: ui.Vec3
     var max_width #: ui.Float
 
     func _ready():
-        var w := VBoxContainer.new()
-        offset = ui.Vec3.create("Offset", w)
-        max_width = ui.Float.create("Max Width", w)
-        add_child(w)
+        offset = ui.Vec3.create("Offset", self)
+        max_width = ui.Float.create("Max Width", self)
+        rect_min_size.x = 200
 
 
 static func create_ui(run_btn: Button) -> Control:

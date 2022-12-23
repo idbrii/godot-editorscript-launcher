@@ -20,12 +20,14 @@ text = "Refresh Scripts"
 [node name="ButtonRoot" type="HBoxContainer" parent="HBox"]
 unique_name_in_owner = true
 margin_left = 111.0
-margin_right = 111.0
+margin_right = 1020.0
 margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBox" type="VBoxContainer" parent="HBox"]
-margin_left = 115.0
-margin_right = 115.0
+margin_left = 1024.0
+margin_right = 1024.0
 margin_bottom = 600.0
 
 [connection signal="pressed" from="HBox/Reload" to="." method="_on_reload_pressed"]

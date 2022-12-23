@@ -13,6 +13,8 @@ static func _append_float(root: Control, label_text: String):
 class CommonControl extends HBoxContainer:
 
     func _ready():
+        rect_size.x = 100
+        rect_size.y = 50
         pass
 
     func add_empty_label() -> Label:

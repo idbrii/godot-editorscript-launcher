@@ -34,6 +34,12 @@ static func get_selection_or_children(ed: EditorInterface) -> Array:
     return sort_by_child_index(selection)
 
 
+# Get selected nodes or if only one is selected, get its children.
+static func get_first_selection(ed: EditorInterface) -> Node:
+    var selection := ed.get_selection().get_selected_nodes()
+    return selection[0]
+
+
 # Sort the input list of nodes by their child index so they match the order seen in editor.
 static func sort_by_child_index(items: Array) -> Array:
     items.sort_custom(SortByChildIndex.new(), "cmp")

@@ -24,8 +24,9 @@ class CommonControl extends HBoxContainer:
         return label
 
     func add_label(label_text: String):
-        var spacing := add_empty_label()
-        spacing.rect_min_size.x = 10
+        #~ var spacing := add_empty_label()
+        #~ spacing.rect_min_size.x = 10
+        add_spacer(true)
         var label := add_empty_label()
         label.text = label_text
         add_child(label)

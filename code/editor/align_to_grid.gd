@@ -29,9 +29,7 @@ static func run_script(ed: EditorInterface, ui_root: Control):
     var max_width = ui_root.max_width.val.value
     var offset := ui_root.offset.get_value() as Vector3
 
-    var selection := ed.get_selection().get_selected_nodes()
-    if selection.size() == 1:
-        selection = selection[0].get_children()
+    var selection := LaunchableScript.get_selection_or_children(ed)
     var start = selection[0].global_translation
     var pos := Vector3.ZERO
     for item in selection:

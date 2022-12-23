@@ -54,6 +54,10 @@ func load_from_path(path: String, ed: EditorInterface):
         btn.set_size(Vector2(80,20))
         btn.show()
 
+        var spacer := Label.new()
+        spacer.rect_min_size.x = 10
+        root.add_child(spacer)
+
 
 func _ready():
     _on_reload_pressed()

@@ -37,5 +37,5 @@ static func run_script(ed: EditorInterface, ui_root: Control):
     for item in selection:
         item.translation = Vector3.RIGHT.rotated(Vector3.UP, angle) * radius
         angle += delta
-        printt(item, angle)
+        #~ printt(item, angle)
 

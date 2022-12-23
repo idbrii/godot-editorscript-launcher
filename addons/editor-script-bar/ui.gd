@@ -9,6 +9,15 @@ static func _append_float(root: Control, label_text: String):
     return spin
 
 
+class NumberSpinner extends SpinBox:
+    func get_value():
+        var txt := get_line_edit().text
+        return float(txt)
+
+    func set_value(v):
+        get_line_edit().text = str(v)
+
+
 
 class CommonControl extends HBoxContainer:
 
@@ -41,22 +50,18 @@ class CommonControl extends HBoxContainer:
         var label := Label.new()
         label.text = label_text
         root.add_child(label)
-        var spin := SpinBox.new()
+        var spin := NumberSpinner.new()
         root.add_child(spin)
         return spin
 
 
 
 class Float extends CommonControl:
-    var val: SpinBox
+    var val: NumberSpinner
 
     func _ready():
-        val = SpinBox.new()
+        val = NumberSpinner.new()
         self.add_child(val)
-
-    func get_value():
-        var txt := val.get_line_edit().text
-        return float(txt)
 
     static func create(label_text, parent):
         var w := Float.new()
@@ -67,12 +72,20 @@ class Float extends CommonControl:
 
 
 class Vec2 extends CommonControl:
-    var x : SpinBox
-    var y : SpinBox
+    var x : NumberSpinner
+    var y : NumberSpinner
 
     func _ready():
         x = _append_float(self, "X")
         y = _append_float(self, "Y")
+
+    func get_value():
+        return Vector2(x.get_value(),
+            y.get_value())
+
+    func set_value(v):
+        x.set_value(v.x)
+        y.set_value(v.y)
 
     static func create(label_text, parent):
         var w := Vec2.new()
@@ -82,11 +95,21 @@ class Vec2 extends CommonControl:
 
 
 class Vec3 extends Vec2:
-    var z : SpinBox
+    var z : NumberSpinner
 
     func _ready():
         # parent._ready() is called automatically.
         z = _append_float(self, "Z")
+
+    func get_value():
+        return Vector3(x.get_value(),
+            y.get_value(),
+            z.get_value())
+
+    func set_value(v):
+        .set_value(v)
+        z.set_value(v.z)
+
 
     static func create(label_text, parent):
         var w := Vec3.new()

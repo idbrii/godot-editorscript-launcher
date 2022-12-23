@@ -10,7 +10,9 @@ class Data extends VBoxContainer:
 
     func _ready():
         offset = ui.Vec3.create("Offset", self)
+        offset.set_value(Vector3(1, 0, 1))
         max_width = ui.Float.create("Max Width", self)
+        max_width.val.set_value(50)
         rect_min_size.x = 200
 
 
@@ -18,14 +20,14 @@ static func create_ui(run_btn: Button) -> Control:
     printt("create_ui from align_to_grid.gd")
 
     var root := Data.new()
+    root.name = "align_to_grid data"
     root.add_child(run_btn)
     return root
 
 
 static func run_script(ed: EditorInterface, ui_root: Control):
-    # TODO: How do I get the data out of ui?
-    var max_width = ui_root.max_width.get_value()
-    var offset := Vector3(1.0, 0, 1.0)
+    var max_width = ui_root.max_width.val.get_value()
+    var offset := ui_root.offset.get_value() as Vector3
 
     var selection := ed.get_selection().get_selected_nodes()
     if selection.size() == 1:

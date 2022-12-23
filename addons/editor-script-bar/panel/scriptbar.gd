@@ -45,7 +45,7 @@ func load_from_path(path: String, ed: EditorInterface):
         var widget = target.create_ui(btn)
         btn.ui_root = widget
         root.add_child(widget)
-        if not btn.get_parent():
+        if btn.get_parent() == null:
             widget.add_child(btn)
 
         btn.ed = ed

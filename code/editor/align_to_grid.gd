@@ -1,5 +1,5 @@
 tool
-extends Launchable
+extends LaunchableScript
 
 const ui = preload("res://addons/editor-script-bar/ui.gd")
 

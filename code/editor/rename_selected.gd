@@ -1,5 +1,5 @@
 tool
-extends Launchable
+extends LaunchableScript
 
 
 static func run_script(ed: EditorInterface, ui_root: Control):

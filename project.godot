@@ -10,12 +10,12 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "EditorScript",
-"class": "Launchable",
+"class": "LaunchableScript",
 "language": "GDScript",
-"path": "res://addons/editor-script-bar/launchable.gd"
+"path": "res://addons/editor-script-bar/launchablescript.gd"
 } ]
 _global_script_class_icons={
-"Launchable": ""
+"LaunchableScript": ""
 }
 
 [application]
@@ -30,6 +30,8 @@ enabled=PoolStringArray( "res://addons/editor-script-bar/plugin.cfg" )
 [global]
 
 indent=false
+edit=false
+text=false
 
 [gui]
 

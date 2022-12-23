@@ -1,6 +1,6 @@
 tool
 extends EditorScript
-class_name Launchable
+class_name LaunchableScript
 
 
 func _run():

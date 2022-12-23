@@ -3,6 +3,8 @@ extends EditorScript
 class_name LaunchableScript
 
 
+# All of your editor scripts need to extend LaunchableScript and live in
+# res://code/editor/
 #
 # API
 # Child classes should override these.
@@ -40,7 +42,8 @@ static func get_first_selection(ed: EditorInterface) -> Node:
     return selection[0]
 
 
-# Sort the input list of nodes by their child index so they match the order seen in editor.
+# Sort the input list of nodes by their child index so they match the order
+# seen in editor.
 static func sort_by_child_index(items: Array) -> Array:
     items.sort_custom(SortByChildIndex.new(), "cmp")
     return items

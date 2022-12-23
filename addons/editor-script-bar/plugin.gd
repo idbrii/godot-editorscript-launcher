@@ -2,7 +2,7 @@ tool
 extends EditorPlugin
 
 const bar_scene = preload("res://addons/editor-script-bar/panel/scriptbar.tscn")
-export var script_path := "res://code/editor/"
+var script_path := "res://code/editor/"
 
 var bar
 var bar_btn: ToolButton

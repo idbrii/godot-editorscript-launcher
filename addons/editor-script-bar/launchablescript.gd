@@ -27,8 +27,8 @@ func _run():
 
 # Get selected nodes or if only one is selected, get its children.
 static func get_selection_or_children(ed: EditorInterface) -> Array:
-    var selection := ed.get_selection().get_selected_nodes()
-    if selection.size() == 1:
+    var selection := ed.get_selection().get_transformable_selected_nodes()
+    if selection.size() == 1 and selection[0].get_child_count() > 1:
         selection = selection[0].get_children()
     # Sort to ensure results match order seen in editor.
     return sort_by_child_index(selection)

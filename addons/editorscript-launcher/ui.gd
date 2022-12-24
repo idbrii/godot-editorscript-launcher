@@ -45,10 +45,7 @@ class Choice extends CommonControl:
     var val: OptionButton
     var choices
 
-    func _ready():
-        pass
-
-    func init(choice_enum):
+    func populate_choices(choice_enum):
         val = OptionButton.new()
         choices = choice_enum
         var choice_names = choices.keys()
@@ -60,7 +57,7 @@ class Choice extends CommonControl:
 
     static func create(label_text, choice_enum, parent):
         var w = Choice.new()
-        w.init(choice_enum)
+        w.populate_choices(choice_enum)
         parent.add_child(w)
         w.add_label(label_text)
         return w

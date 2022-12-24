@@ -38,6 +38,38 @@ class CommonControl extends HBoxContainer:
 
 
 
+class Choice extends CommonControl:
+    var val: OptionButton
+    var choices
+
+    func _ready():
+        pass
+
+    func init(choice_enum):
+        val = OptionButton.new()
+        choices = choice_enum
+        var choice_names = choices.keys()
+        assert(choices[choice_names[0]] == 0, "Input enum must be indexed 0,1,2,...")
+        for name in choice_names:
+            var idx = choices[name]
+            val.add_item(name.capitalize(), idx)
+        add_child(val)
+
+    static func create(label_text, choice_enum, parent):
+        var w = Choice.new()
+        w.init(choice_enum)
+        parent.add_child(w)
+        w.add_label(label_text)
+        return w
+
+    func get_selected_name():
+        return choices.keys()[val.get_selected_id()]
+
+    func get_selected_value():
+        return val.get_selected_id()
+
+
+
 class Boolean extends CommonControl:
     var val: CheckBox
 

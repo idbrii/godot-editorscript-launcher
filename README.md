@@ -44,7 +44,7 @@ align_to_grid.gd
 
 
 layout_circle.gd
-![layout circle](https://user-images.githubusercontent.com/43559/209448447-4f70e899-cc82-4dda-b4d9-2c14dcd89294.png)
+![layout circle](https://user-images.githubusercontent.com/43559/209448619-32424745-768e-4165-96c3-a7a4eda8ee2b.png)
 
 
 rename_selected.gd

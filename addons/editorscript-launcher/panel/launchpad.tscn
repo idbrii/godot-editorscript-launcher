@@ -6,21 +6,29 @@
 [node name="Launchpad" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -450.0
 rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 1 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 scroll_vertical_enabled = false
 
 [node name="HBox" type="HBoxContainer" parent="ScrollContainer"]
-margin_right = 72.0
-margin_bottom = 50.0
+margin_right = 1024.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="VBoxLeft" type="VBoxContainer" parent="ScrollContainer/HBox"]
 margin_right = 50.0
-margin_bottom = 50.0
+margin_bottom = 150.0
+size_flags_vertical = 3
 
 [node name="Reload" type="Button" parent="ScrollContainer/HBox/VBoxLeft"]
 margin_right = 50.0
@@ -31,24 +39,26 @@ icon = ExtResource( 2 )
 icon_align = 1
 expand_icon = true
 
-[node name="Spacer2" type="Label" parent="ScrollContainer/HBox"]
+[node name="Spacer" type="Label" parent="ScrollContainer/HBox"]
 margin_left = 54.0
-margin_top = 18.0
+margin_top = 68.0
 margin_right = 64.0
-margin_bottom = 32.0
+margin_bottom = 82.0
 rect_min_size = Vector2( 10, 0 )
 
-[node name="ButtonRoot" type="HBoxContainer" parent="ScrollContainer/HBox"]
+[node name="BasicButtons" type="VFlowContainer" parent="ScrollContainer/HBox"]
 unique_name_in_owner = true
 margin_left = 68.0
-margin_right = 68.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
+margin_right = 190.0
+margin_bottom = 150.0
 size_flags_vertical = 3
 
-[node name="VBox" type="VBoxContainer" parent="ScrollContainer/HBox"]
-margin_left = 72.0
-margin_right = 72.0
-margin_bottom = 50.0
+[node name="ComplexButtons" type="HBoxContainer" parent="ScrollContainer/HBox"]
+unique_name_in_owner = true
+margin_left = 194.0
+margin_right = 1024.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [connection signal="pressed" from="ScrollContainer/HBox/VBoxLeft/Reload" to="." method="_on_reload_pressed"]

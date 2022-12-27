@@ -26,8 +26,11 @@ func get_files_in_dir(path: String) -> Array:
 
 
 func load_from_path(path: String, ed: EditorInterface):
-    var root := $"%ButtonRoot"
-    for item in root.get_children():
+    var basic := $"%BasicButtons"
+    var complex := $"%ComplexButtons"
+    for item in basic.get_children():
+        item.queue_free()
+    for item in complex.get_children():
         item.queue_free()
 
     var files := get_files_in_dir(path)
@@ -44,7 +47,14 @@ func load_from_path(path: String, ed: EditorInterface):
 
         var widget = target.create_ui(btn)
         btn.ui_root = widget
-        root.add_child(widget)
+        if widget == btn:
+            basic.add_child(widget)
+        else:
+            complex.add_child(widget)
+            var spacer := Label.new()
+            spacer.rect_min_size.x = 10
+            complex.add_child(spacer)
+
         if btn.get_parent() == null:
             widget.add_child(btn)
 
@@ -54,9 +64,6 @@ func load_from_path(path: String, ed: EditorInterface):
         btn.set_size(Vector2(80,20))
         btn.show()
 
-        var spacer := Label.new()
-        spacer.rect_min_size.x = 10
-        root.add_child(spacer)
 
 
 const script_path := "res://code/editor/"

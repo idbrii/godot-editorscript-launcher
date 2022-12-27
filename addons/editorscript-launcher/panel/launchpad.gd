@@ -59,11 +59,11 @@ func load_from_path(path: String, ed: EditorInterface):
         root.add_child(spacer)
 
 
+const script_path := "res://code/editor/"
 func _ready():
-    _on_reload_pressed()
+    load_from_path(script_path, null)
 
 
 func _on_reload_pressed():
-    var script_path := "res://code/editor/"
     load_from_path(script_path, plugin.get_editor_interface())
 

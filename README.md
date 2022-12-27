@@ -14,7 +14,7 @@ code/editor/rename_selected.gd for examples.
 
 You'll get a new "Script Launcher" button on the bottom toolbar that incldues
 buttons for all of your scripts:
-![toolbar](https://user-images.githubusercontent.com/43559/209448353-f48bf87c-a238-475e-acc5-3de8646f568d.png)
+![toolbar](https://user-images.githubusercontent.com/43559/209706015-4afdf60d-db7a-48f6-8fc3-640667f50fbf.png)
 
 # Example New Script
 
@@ -33,22 +33,22 @@ static func run_script(ed: EditorInterface, ui_root: Control):
 
 Hit Refresh, and now you'll have a new button!
 
-![rename copy first](https://user-images.githubusercontent.com/43559/209448514-73e76260-0211-4d33-940a-c47622d0d0e3.png)
+![rename copy first](https://user-images.githubusercontent.com/43559/209706626-570118e3-0da8-4953-ab35-c7ad7e019748.png)
 
 # Included scripts
 
 Some of the included scripts as demonstrations of what's possible:
 
 align_to_grid.gd
-![align to grid](https://user-images.githubusercontent.com/43559/209448452-a7c2d080-86f9-455a-910c-d2c2f42b8483.png)
+![align to grid](https://user-images.githubusercontent.com/43559/209706497-be29dbd5-8a64-4ed2-91fc-0fbd65e38492.png)
 
 
 layout_circle.gd
-![layout circle](https://user-images.githubusercontent.com/43559/209448619-32424745-768e-4165-96c3-a7a4eda8ee2b.png)
+![layout circle](https://user-images.githubusercontent.com/43559/209706506-1e469175-35c9-4c42-b1b4-ee4f937042ac.png)
 
 
 rename_selected.gd
-![rename selected](https://user-images.githubusercontent.com/43559/209448442-308f1806-7617-4033-8169-c339a02ddcdc.png)
+![rename selected](https://user-images.githubusercontent.com/43559/209706522-fcd0bb15-28e3-4455-b70e-3be13b6ddfa6.png)
 
 
 # Troubleshooting

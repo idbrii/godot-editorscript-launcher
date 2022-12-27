@@ -60,7 +60,7 @@ func load_from_path(path: String, ed: EditorInterface):
 
         btn.ed = ed
         #~ assert(btn.target.has_method("run_script"), "Scripts must have a run_script: %s" % fullpath)
-        btn.text = f.get_basename()
+        btn.text = f.get_basename().capitalize()
         btn.set_size(Vector2(80,20))
         btn.show()
 

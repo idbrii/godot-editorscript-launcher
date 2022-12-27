@@ -12,5 +12,7 @@
 /CONTRIBUTING.md export-ignore
 /icon.png export-ignore
 /icon.svg export-ignore
+/icon.png.import export-ignore
+/icon.svg.import export-ignore
 /test_*.tres export-ignore
 /test_*.tscn export-ignore

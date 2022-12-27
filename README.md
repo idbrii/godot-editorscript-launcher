@@ -4,6 +4,12 @@ Adds a hotbar with buttons for each of your editor scripts so you can write
 scripts to speed up your Godot development. Scripts can specify custom UI so
 you can pass parameters.
 
+While Godot has built-in
+[EditorScript](https://docs.godotengine.org/en/stable/classes/class_editorscript.html),
+they only run from the code editor which means you can't see the scene and
+can't run [when using an external
+editor](https://github.com/godotengine/godot/issues/39842).
+
 # Setup
 
 Install and enable the addon [as

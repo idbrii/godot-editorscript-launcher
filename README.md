@@ -1,7 +1,8 @@
 # EditorScript Launcher
 
-Make it easy to run editor script code to make it simple to write scripts to
-speed up your Godot development.
+Adds a hotbar with buttons for each of your editor scripts so you can write
+scripts to speed up your Godot development. Scripts can specify custom UI so
+you can pass parameters.
 
 # Setup
 

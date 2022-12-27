@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/editorscript-launcher/panel/launchpad.gd" type="Script" id=1]
+[ext_resource path="res://addons/editorscript-launcher/panel/update-icon-white.svg" type="Texture" id=2]
 
 [node name="Launchpad" type="Control"]
 anchor_right = 1.0
@@ -14,42 +15,40 @@ anchor_bottom = 1.0
 scroll_vertical_enabled = false
 
 [node name="HBox" type="HBoxContainer" parent="ScrollContainer"]
-margin_right = 82.0
-margin_bottom = 38.0
+margin_right = 72.0
+margin_bottom = 50.0
 
 [node name="VBoxLeft" type="VBoxContainer" parent="ScrollContainer/HBox"]
-margin_right = 60.0
-margin_bottom = 38.0
-
-[node name="Spacer1" type="Label" parent="ScrollContainer/HBox/VBoxLeft"]
-margin_right = 60.0
-margin_bottom = 14.0
+margin_right = 50.0
+margin_bottom = 50.0
 
 [node name="Reload" type="Button" parent="ScrollContainer/HBox/VBoxLeft"]
-margin_top = 18.0
-margin_right = 60.0
-margin_bottom = 38.0
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
 hint_tooltip = "Refresh the list of script buttons."
-text = "Refresh"
+icon = ExtResource( 2 )
+icon_align = 1
+expand_icon = true
 
 [node name="Spacer2" type="Label" parent="ScrollContainer/HBox"]
-margin_left = 64.0
-margin_top = 12.0
-margin_right = 74.0
-margin_bottom = 26.0
+margin_left = 54.0
+margin_top = 18.0
+margin_right = 64.0
+margin_bottom = 32.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="ButtonRoot" type="HBoxContainer" parent="ScrollContainer/HBox"]
 unique_name_in_owner = true
-margin_left = 78.0
-margin_right = 78.0
-margin_bottom = 38.0
+margin_left = 68.0
+margin_right = 68.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBox" type="VBoxContainer" parent="ScrollContainer/HBox"]
-margin_left = 82.0
-margin_right = 82.0
-margin_bottom = 38.0
+margin_left = 72.0
+margin_right = 72.0
+margin_bottom = 50.0
 
 [connection signal="pressed" from="ScrollContainer/HBox/VBoxLeft/Reload" to="." method="_on_reload_pressed"]

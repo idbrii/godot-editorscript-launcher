@@ -44,9 +44,15 @@ func load_from_path(path: String, ed: EditorInterface):
         var btn := FuncButton.new()
         btn.target = target
         assert(btn.target, "Failed to load script %s" % fullpath)
+        btn.ed = ed
+        #~ assert(btn.target.has_method("run_script"), "Scripts must have a run_script: %s" % fullpath)
+        btn.text = f.get_basename().capitalize()
+        btn.set_size(Vector2(80,20))
+        btn.show()
 
         var widget = target.create_ui(btn)
         btn.ui_root = widget
+
         if widget == btn:
             basic.add_child(widget)
         else:
@@ -57,14 +63,6 @@ func load_from_path(path: String, ed: EditorInterface):
 
         if btn.get_parent() == null:
             widget.add_child(btn)
-
-        btn.ed = ed
-        #~ assert(btn.target.has_method("run_script"), "Scripts must have a run_script: %s" % fullpath)
-        btn.text = f.get_basename().capitalize()
-        btn.set_size(Vector2(80,20))
-        btn.show()
-
-
 
 const script_path := "res://code/editor/"
 func _ready():

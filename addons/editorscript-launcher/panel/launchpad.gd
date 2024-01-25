@@ -1,9 +1,9 @@
 @tool
 extends Control
 
-const FuncButton = preload("res://addons/editorscript-launcher/panel/funcbutton.gd")
+const FUNC_BUTTON = preload("res://addons/editorscript-launcher/panel/func_button.gd")
 
-var plugin #: EditorPlugin
+var plugin: EditorPlugin = null
 
 
 func get_files_in_dir(path: String) -> Array:
@@ -41,7 +41,7 @@ func load_from_path(path: String, ed: EditorInterface):
 		var fullpath = path.path_join(f)
 
 		var target = load(fullpath)
-		var btn := FuncButton.new()
+		var btn := FUNC_BUTTON.new()
 		btn.target = target
 		assert(btn.target, "Failed to load script %s" % fullpath)
 		btn.ed = ed
@@ -64,11 +64,11 @@ func load_from_path(path: String, ed: EditorInterface):
 		if btn.get_parent() == null:
 			widget.add_child(btn)
 
-const SCRIPT_PATH := "res://code/editor/"
+
 func _ready():
-	load_from_path(SCRIPT_PATH, null)
+	load_from_path(plugin.script_path, null)
 
 
 func _on_reload_pressed():
-	load_from_path(SCRIPT_PATH, plugin.get_editor_interface())
+	load_from_path(plugin.script_path, plugin.get_editor_interface())
 

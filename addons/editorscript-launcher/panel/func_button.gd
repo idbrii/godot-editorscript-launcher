@@ -12,4 +12,3 @@ func _ready():
 func _on_button_pressed():
 	var fn = target.new()
 	fn.run_script(ed, ui_root)
-

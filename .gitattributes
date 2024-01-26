@@ -16,3 +16,5 @@
 /icon.svg.import export-ignore
 /test_*.tres export-ignore
 /test_*.tscn export-ignore
+
+*.gd text eol=LF

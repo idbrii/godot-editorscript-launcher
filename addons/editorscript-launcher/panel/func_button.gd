@@ -6,10 +6,9 @@ var ui_root: Control
 
 
 func _ready():
-    connect("pressed", self, "_on_button_pressed")
+	connect("pressed", _on_button_pressed)
 
 
 func _on_button_pressed():
-    var fn = target.new()
-    fn.run_script(ed, ui_root)
-
+	var fn = target.new()
+	fn.run_script(ed, ui_root)

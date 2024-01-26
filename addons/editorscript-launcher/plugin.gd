@@ -23,7 +23,7 @@ func _enter_tree():
 	settings.settings_changed.connect(_on_settings_changed)
 	# Try get custom setting of script source dir
 	var settings_script_path = _get_script_path_from_setting()
-	if settings_script_path.is_empty():
+	if null == settings_script_path or settings_script_path.is_empty():
 		settings.set_setting(EDITOR_SETTINGS_PROPERTY_INFO_NAME, script_path)
 	else:
 		script_path = settings_script_path
